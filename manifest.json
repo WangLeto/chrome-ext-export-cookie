@@ -1,0 +1,17 @@
+{
+  "name": "导出cookie",
+  "description": "导出你想要的域名 cookie",
+  "version": "0.7",
+  "permissions": ["scripting", "cookies", "downloads"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "./033-cookie.png"
+  },
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "manifest_version": 3
+}
