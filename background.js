@@ -2,7 +2,7 @@ const exportCookie = (domain) => {
   return new Promise((resolve) => {
     chrome.cookies.getAll(
       {
-        domain: "coze.cn",
+        domain,
       },
       (res) => {
         const trans = formatCookies(res);
