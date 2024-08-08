@@ -1,4 +1,4 @@
-const exportCookie = () => {
+const exportCookie = (domain) => {
   return new Promise((resolve) => {
     chrome.cookies.getAll(
       {
@@ -28,7 +28,7 @@ const formatCookies = (res) => {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "get-cookie") {
-    exportCookie().then(sendResponse);
+    exportCookie(message.domain).then(sendResponse);
     return true;
   }
 });
